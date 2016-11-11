@@ -1,0 +1,8 @@
+[ domain_devlocal ]
+nsCertType              = server
+keyUsage                = digitalSignature,nonRepudiation,keyEncipherment
+extendedKeyUsage        = serverAuth
+subjectKeyIdentifier    = hash
+authorityKeyIdentifier  = keyid,issuer
+subjectAltName          = @domain_devlocal_subject
+[ domain_devlocal_subject ]
