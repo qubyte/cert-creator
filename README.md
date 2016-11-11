@@ -11,3 +11,7 @@ docker run -v /dir/to/put/cert/in:/out qubyte/cert-creator -d <domain> -d <alt-d
 
 Once the pair are created, you need to install the `.pem` file into your browser
 and/or system keychain, and trust it for SSL.
+
+## TODO
+
+More information on installing certificates.
