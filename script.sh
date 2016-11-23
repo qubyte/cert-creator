@@ -33,6 +33,10 @@ fi
 
 openssl genrsa 4096 > localCA.key
 openssl req -x509 -sha256 -new -nodes -key localCA.key -days 1000 -out localCA.pem -subj "/CN=$first_domain"
-openssl genrsa 2048 > /out/local.key
-openssl req -new -key /out/local.key -subj "/CN=$first_domain" > local.csr
-openssl x509 -req -sha256 -days 1000 -CA localCA.pem -CAkey localCA.key -CAcreateserial -in local.csr -extfile cert.conf -extensions domain_devlocal > /out/local.pem
+openssl genrsa 2048 > local.key
+openssl req -new -key local.key -subj "/CN=$first_domain" > local.csr
+openssl x509 -req -sha256 -days 1000 -CA localCA.pem -CAkey localCA.key -CAcreateserial -in local.csr -extfile cert.conf -extensions domain_devlocal > local.pem
+
+cp localCA.pem /out
+cp local.key /out
+cp local.pem /out
